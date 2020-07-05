@@ -1,5 +1,5 @@
 # IridiumScoreBoard
-IridiumScoreBoard is a plugin which allows you to make sign based score boards for the IridiumSkyblock plugin
+*IridiumScoreBoard* is a spigot plugin, which allows you to make sign based score boards for [IridiumSkyBlock](https://github.com/IridiumLLC/IridiumSkyblock).
 
 # Commands
 /isbadd *Add a sign to the scoreboard*
