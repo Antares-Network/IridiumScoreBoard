@@ -1,0 +1,18 @@
+#---------------------------------#
+#         M E S S A G E S         #
+#---------------------------------#
+
+# Prefix for every ISB message
+message-prefix: '&b&lIridiumScoreBoard &8»'
+
+
+#---------------------------------#
+#       F O R M A T T I N G       #
+#---------------------------------#
+
+# Variables {NUMBER} {PLAYER} {VALUE} For color use '&'
+sign-format:
+  - '&8---------------'
+  - '&6&l#{NUMBER}'
+  - '&7{PLAYER}'
+  - '&c{VALUE}'

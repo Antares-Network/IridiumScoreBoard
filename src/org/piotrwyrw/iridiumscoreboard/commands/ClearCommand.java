@@ -3,26 +3,26 @@ package org.piotrwyrw.iridiumscoreboard.commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.piotrwyrw.iridiumscoreboard.Main;
-import org.piotrwyrw.iridiumscoreboard.Messages;
-import org.piotrwyrw.iridiumscoreboard.Permissions;
+import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
+import org.piotrwyrw.iridiumscoreboard.globals.Messages;
+import org.piotrwyrw.iridiumscoreboard.globals.Permissions;
 
-public class ClearCommand implements CommandExecutor {
-	
+public class ClearCommand extends CommandHandler {
+
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+	public boolean handleCommand(CommandSender sender, String[] args) {
 		if (!sender.hasPermission(Permissions.REMALL_SCORE_PANELS)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}
 		
-		if (args.length != 0) {
+		if (args.length != 1) {
 			sender.sendMessage(Messages.EXPECTED_ARGUMENTS(0));
 			return false;
 		}
 		
-		Main.getScoreBoard().removeAllPanels();
-		Main.getScoreBoard().write(true);
+		IridiumScoreBoard.getScoreBoard().removeAllPanels();
+		IridiumScoreBoard.getScoreBoard().write(true);
 		sender.sendMessage(Messages.REMALL_DONE);
 		return true;
 	}
