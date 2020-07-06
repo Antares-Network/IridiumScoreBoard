@@ -3,6 +3,7 @@ package org.piotrwyrw.iridiumscoreboard.commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
 import org.piotrwyrw.iridiumscoreboard.commands.help.HelpPage;
 
 public class IridiumScoreBoardMainCommand implements CommandExecutor {
@@ -11,7 +12,13 @@ public class IridiumScoreBoardMainCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {	
 		
 		if (args.length == 0) {
-			HelpPage.show(sender);
+			sender.sendMessage(new String[] {
+					"",
+					"§b          IridiumScoreBoard",
+					"§7  Running IridiumScoreBoard §cv" + IridiumScoreBoard.getInstance().getDescription().getVersion(),
+					"§7       For help use §c/isb help",
+					""
+			});
 			return true;
 		}
 		
@@ -30,6 +37,7 @@ public class IridiumScoreBoardMainCommand implements CommandExecutor {
 			return new TestPanelCommand().handleCommand(sender, args);
 		case "reload":
 			return new ReloadCommand().handleCommand(sender, args);
+		case "help":
 		default:
 			HelpPage.show(sender);
 			return true;
