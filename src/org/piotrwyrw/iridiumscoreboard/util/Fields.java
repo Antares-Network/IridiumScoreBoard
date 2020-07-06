@@ -7,7 +7,7 @@ public class Fields {
 		String out = str;
 		out = out.replaceAll("\\%PLAYER\\%", owner);
 		out = out.replaceAll("\\%NUMBER\\%", String.valueOf(top));
-		out = out.replaceAll("\\%VALUE\\%", String.valueOf(island.getValue()));
+		out = out.replaceAll("\\%VALUE\\%", String.valueOf(((int)island.getValue())));
 		out = out.replaceAll("\\%MEMBERS\\%", String.valueOf(island.getMembers().size()));
 		out = out.replaceAll("\\%NAME\\%", island.getName());
 		out = out.replaceAll("\\%ID\\%", String.valueOf(island.getId()));
