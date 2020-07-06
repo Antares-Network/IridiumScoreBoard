@@ -17,6 +17,10 @@ public class ScoreBoard {
 	}
 	
 	public void test() {
+		if (scorepanels == null)
+			return;
+		if (scorepanels.size() <= 0)
+			return;
 		for (int i = 0; i < scorepanels.size(); i ++) {
 			ScorePanel p = scorepanels.get(i);
 			if (!(p.location.getBlock().getState() instanceof Sign)) {
