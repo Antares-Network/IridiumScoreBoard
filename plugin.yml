@@ -1,7 +1,7 @@
 name: IridiumScoreBoard
 main: org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard
 depend: [IridiumSkyblock]
-version: 1.4
+version: 1.5
 author: piotrwyrw
 api-version: 1.15
 commands:

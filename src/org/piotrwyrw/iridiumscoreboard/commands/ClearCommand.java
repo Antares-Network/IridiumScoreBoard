@@ -1,14 +1,12 @@
 package org.piotrwyrw.iridiumscoreboard.commands;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
 import org.piotrwyrw.iridiumscoreboard.globals.Messages;
 import org.piotrwyrw.iridiumscoreboard.globals.Permissions;
 
 public class ClearCommand extends CommandHandler {
-
+	
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
 		if (!sender.hasPermission(Permissions.REMALL_SCORE_PANELS)) {

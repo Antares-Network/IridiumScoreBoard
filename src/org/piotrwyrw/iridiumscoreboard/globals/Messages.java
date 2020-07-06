@@ -14,6 +14,9 @@ public class Messages {
 	// Panel added to list message
 	public static String PANEL_ADDED = PREFIX + "§aThe score panel was added to the list.";
 	
+	// All panels have been removed message
+	public static String REMALL_DONE = PREFIX + "§aAll panels have been removed.";
+	
 	// Selected block is not a sign message
 	public static String NOT_SIGN = PREFIX + "§cThe selected block is not a sign.";
 	
@@ -23,9 +26,6 @@ public class Messages {
 	// Encountered block which is not a sign while testing message
 	public static String TEST_WRONG_BLOCK = PREFIX + "§cEncountered a block which is not a sign while testing the scoreboard. Skipped.";
 	
-	// All panels have been removed message
-	public static String REMALL_DONE = PREFIX + "§aAll panels have been removed.";
-	
 	// All tasks stoppen message
 	public static String TASK_STOP = PREFIX + "§aAll update tasks have been stopped. The scoreboard won't refresh until /isbstart was called.";
 	
@@ -34,6 +34,12 @@ public class Messages {
 	
 	// Saved message
 	public static String SAVED = PREFIX + "§aSaved.";
+	
+	// Reload
+	public static String CONF_RELOAD = PREFIX + "§aConfig reloaded.";
+	
+	// Reloading
+	public static String CONF_RELOADING = PREFIX + "§7Reloading config ..";
 	
 	// Exception message
 	public static String EXCEPTION(String details) {

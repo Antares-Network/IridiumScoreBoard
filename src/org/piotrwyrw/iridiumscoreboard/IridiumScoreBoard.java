@@ -9,6 +9,8 @@ import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.piotrwyrw.iridiumscoreboard.commands.IridiumScoreBoardMainCommand;
 import org.piotrwyrw.iridiumscoreboard.config.IridiumScoreBoardConfiguration;
@@ -49,9 +51,10 @@ public class IridiumScoreBoard extends JavaPlugin {
 	}
 	
 	public static void startUpdater() {
-		ScoreUpdater su = new ScoreUpdater(board);
-		su.runTaskTimer(instance, 0, 20*10);
+		ScoreUpdater updater = new ScoreUpdater(board);
+		updater.runTaskTimer(instance, 0, 20*10);
 	}
+	
 	
 	@Override
 	public void onEnable() {

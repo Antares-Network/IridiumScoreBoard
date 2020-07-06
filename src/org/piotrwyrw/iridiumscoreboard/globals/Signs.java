@@ -15,4 +15,9 @@ public class Signs {
 			"§2TEST",
 			"§3TEST",
 			"§4TEST"));
+	public static List<String> empty = new ArrayList<String>(Arrays.asList(
+			"",
+			"",
+			"",
+			""));
 }

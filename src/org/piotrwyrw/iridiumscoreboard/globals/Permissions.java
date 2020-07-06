@@ -19,4 +19,7 @@ public class Permissions {
 	
 	// Save current state to a file
 	public static String SAVE_SCORE_PANELS = "isb.save";
+	
+	// Relaod
+	public static String RELOAD_ISB = "isb.reload";
 }
