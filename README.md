@@ -9,4 +9,5 @@
   - start - *Start the score uodating timer*
   - stop - *Stop the score updating timer*
   - test - *Test the score panels by filling them with test content*
+  - reload - *Reload the configuration*
 - *Help Page*
