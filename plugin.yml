@@ -1,0 +1,9 @@
+name: IridiumScoreBoard
+main: org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard
+depend: [IridiumSkyblock]
+version: 1.6
+author: piotrwyrw
+api-version: 1.15
+commands:
+  isb:
+    description: Main command
