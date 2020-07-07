@@ -4,14 +4,14 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
-import org.piotrwyrw.iridiumscoreboard.globals.Messages;
-import org.piotrwyrw.iridiumscoreboard.globals.Permissions;
+import org.piotrwyrw.iridiumscoreboard.global.Messages;
+import org.piotrwyrw.iridiumscoreboard.global.Permissions;
 
 public class StopCommand extends CommandHandler {
 	
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
-		if (!sender.hasPermission(Permissions.STOP_UPDATE)) {
+		if (!sender.hasPermission(Permissions.COMMAND_STOP)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}
@@ -22,7 +22,7 @@ public class StopCommand extends CommandHandler {
 		}
 		
 		IridiumScoreBoard.cancelAll();
-		sender.sendMessage(Messages.TASK_STOP);
+		sender.sendMessage(Messages.STOP_TASK);
 		return true;
 	}
 	

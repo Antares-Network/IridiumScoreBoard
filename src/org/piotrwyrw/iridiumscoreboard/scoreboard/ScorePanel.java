@@ -8,8 +8,8 @@ import java.util.regex.Pattern;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Sign;
-import org.piotrwyrw.iridiumscoreboard.globals.Signs;
-import org.piotrwyrw.iridiumscoreboard.util.Fields;
+import org.piotrwyrw.iridiumscoreboard.global.SignFormats;
+import org.piotrwyrw.iridiumscoreboard.util.Utilities;
 
 import com.iridium.iridiumskyblock.Island;
 
@@ -24,30 +24,21 @@ public class ScorePanel {
 		if (!(location.getBlock().getState() instanceof Sign)) return;
 		
 		Sign top_sign = ((Sign)location.getBlock().getState());
-		
 		List<String> content = new ArrayList<String>();
 		
 		if (empty) {
-			for (String str : Signs.empty) {
-				content.add(Fields.specialCharacterFields(str));
+			for (String str : SignFormats.empty) {
+				content.add(Utilities.specialCharacterFields(str));
 			}
 			
-			top_sign.setLine(0, content.get(0));
-			top_sign.setLine(1, content.get(1));
-			top_sign.setLine(2, content.get(2));
-			top_sign.setLine(3, content.get(3));
-			top_sign.update();
+			Utilities.signContent(top_sign, content.get(0), content.get(1), content.get(2), content.get(3));
 			return;
 		}
 		
-		for (String str : Signs.sign_format) {
-			content.add(Fields.specialCharacterFields(Fields.islandFields(str, owner, top, island)));
+		for (String str : SignFormats.sign_format) {
+			content.add(Utilities.specialCharacterFields(Utilities.islandFields(str, owner, top, island)));
 		}
 		
-		top_sign.setLine(0, content.get(0));
-		top_sign.setLine(1, content.get(1));
-		top_sign.setLine(2, content.get(2));
-		top_sign.setLine(3, content.get(3));
-		top_sign.update();
+		Utilities.signContent(top_sign, content.get(0), content.get(1), content.get(2), content.get(3));
 	}
 }

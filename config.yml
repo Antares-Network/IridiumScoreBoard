@@ -55,13 +55,20 @@ msg-reset-done: '&aConfig reset.'
 #-----------------------------------#
 
 sign-format:
+  - ''
   - '&3&l#%NUMBER%'
-  - '&8%PLAYER%'
-  - '&8%VALUE%'
-  - '&6[Right Click]'
+  - '&7%PLAYER%'
+  - '&c%VALUE%'
 
 sign-empty-format:
   - ''
   - '&7No data'
-  - '&*.. ..'
+  - '&3&l%LAQUO%%RAQUO%'
   - ''
+
+#-----------------------------------#
+#         P E R M I S S I O N       #
+#-----------------------------------#
+
+# Comming soon
+

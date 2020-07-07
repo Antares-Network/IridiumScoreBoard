@@ -10,9 +10,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
-import org.piotrwyrw.iridiumscoreboard.globals.Messages;
+import org.piotrwyrw.iridiumscoreboard.global.Messages;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScoreBoard;
-import org.piotrwyrw.iridiumscoreboard.util.LocationComparator;
+import org.piotrwyrw.iridiumscoreboard.util.Utilities;
 
 import com.iridium.iridiumskyblock.Island;
 import com.iridium.iridiumskyblock.Utils;
@@ -32,15 +32,15 @@ public class ClickableSign implements Listener {
 		
 		for (int a = 0; a < iterations; a ++) {
 			Location loc = sb.scorepanels.get(a).location;
-			if (LocationComparator.isSame(loc, evt.getClickedBlock().getLocation())) {
+			if (Utilities.isSame(loc, evt.getClickedBlock().getLocation())) {
 				for (int b = 0; b < Utils.getTopIslands().size(); b ++) {
 					if (a == b) {
 						if (!top.get(b).isVisit()) {
-							evt.getPlayer().sendMessage(Messages.IS_PRIVATE);
+							evt.getPlayer().sendMessage(Messages.ISLAND_IS_PRIVATE);
 							break;
 						}
 						evt.getPlayer().teleport(top.get(b).getHome());
-						evt.getPlayer().sendMessage(Messages.IS_SB_TP);
+						evt.getPlayer().sendMessage(Messages.ISLAND_TELEPORT);
 					}	
 				}	
 			}

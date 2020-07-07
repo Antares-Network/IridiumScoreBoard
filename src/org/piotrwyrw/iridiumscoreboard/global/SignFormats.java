@@ -1,10 +1,10 @@
-package org.piotrwyrw.iridiumscoreboard.globals;
+package org.piotrwyrw.iridiumscoreboard.global;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Signs {
+public class SignFormats {
 	public static List<String> sign_format = new ArrayList<String>(Arrays.asList(
 			"",
 			"§6§l#{NUMBER}",

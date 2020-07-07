@@ -7,7 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.Sign;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
-import org.piotrwyrw.iridiumscoreboard.globals.Messages;
+import org.piotrwyrw.iridiumscoreboard.global.Messages;
 
 public class ScoreBoard {
 	public List<ScorePanel> scorepanels;
@@ -17,15 +17,16 @@ public class ScoreBoard {
 	}
 	
 	public void test() {
-		if (scorepanels == null)
-			return;
-		if (scorepanels.size() <= 0)
-			return;
+		if (scorepanels == null) return;
+		if (scorepanels.size() <= 0) return;
+		
+		IridiumScoreBoard isb = IridiumScoreBoard.getInstance();
+		
 		for (int i = 0; i < scorepanels.size(); i ++) {
 			ScorePanel p = scorepanels.get(i);
 			if (!(p.location.getBlock().getState() instanceof Sign)) {
-				Bukkit.broadcastMessage(Messages.TEST_WRONG_BLOCK);
-				System.err.println("----- WARNING: " + p.location.getX() + ", " + p.location.getY() + ", " + p.location.getZ() + " should be a sign, but the block is of type " + p.location.getBlock().getType().toString() + " -----");
+				Bukkit.broadcastMessage(Messages.ENCOUNTERED_WRONG_BLOCK);
+				isb.getLogger().warning("\n\n----- WARNING: " + p.location.getX() + ", " + p.location.getY() + ", " + p.location.getZ() + " should be a sign, but the block is of type " + p.location.getBlock().getType().toString() + " -----\n");
 				continue;
 			}
 			p.updateSign(true, null, null, i + 1);

@@ -2,14 +2,14 @@ package org.piotrwyrw.iridiumscoreboard.commands;
 
 import org.bukkit.command.CommandSender;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
-import org.piotrwyrw.iridiumscoreboard.globals.Messages;
-import org.piotrwyrw.iridiumscoreboard.globals.Permissions;
+import org.piotrwyrw.iridiumscoreboard.global.Messages;
+import org.piotrwyrw.iridiumscoreboard.global.Permissions;
 
 public class ClearCommand extends CommandHandler {
 	
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
-		if (!sender.hasPermission(Permissions.REMALL_SCORE_PANELS)) {
+		if (!sender.hasPermission(Permissions.COMMAND_CLEAR)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}
@@ -21,7 +21,7 @@ public class ClearCommand extends CommandHandler {
 		
 		IridiumScoreBoard.getScoreBoard().removeAllPanels();
 		IridiumScoreBoard.getScoreBoard().write(true);
-		sender.sendMessage(Messages.REMALL_DONE);
+		sender.sendMessage(Messages.CLEAR_PANELS);
 		return true;
 	}
 	

@@ -2,16 +2,16 @@ package org.piotrwyrw.iridiumscoreboard.commands;
 
 import org.bukkit.command.CommandSender;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
-import org.piotrwyrw.iridiumscoreboard.config.IridiumScoreBoardConfiguration;
-import org.piotrwyrw.iridiumscoreboard.globals.Messages;
-import org.piotrwyrw.iridiumscoreboard.globals.Permissions;
+import org.piotrwyrw.iridiumscoreboard.config.Configuration;
+import org.piotrwyrw.iridiumscoreboard.global.Messages;
+import org.piotrwyrw.iridiumscoreboard.global.Permissions;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScoreUpdater;
 
-public class ResetConfig extends CommandHandler {
+public class ResetCommand extends CommandHandler {
 
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
-		if (!sender.hasPermission(Permissions.RESET_CONFIG)) {
+		if (!sender.hasPermission(Permissions.COMMAND_RESET)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}
@@ -21,9 +21,9 @@ public class ResetConfig extends CommandHandler {
 			return false;
 		}
 		
-		sender.sendMessage(Messages.RESETTING_CONF);
+		sender.sendMessage(Messages.RESETTING_CONFIGURATION);
 		IridiumScoreBoard.getInstance().saveResource("config.yml", true);
-		sender.sendMessage(Messages.RESET_DONE);
+		sender.sendMessage(Messages.DONE_RESETTING);
 		return true;
 	}
 

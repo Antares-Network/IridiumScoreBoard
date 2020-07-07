@@ -4,14 +4,14 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
-import org.piotrwyrw.iridiumscoreboard.globals.Messages;
-import org.piotrwyrw.iridiumscoreboard.globals.Permissions;
+import org.piotrwyrw.iridiumscoreboard.global.Messages;
+import org.piotrwyrw.iridiumscoreboard.global.Permissions;
 
 public class SaveCommand extends CommandHandler {
 
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
-		if (!sender.hasPermission(Permissions.SAVE_SCORE_PANELS)) {
+		if (!sender.hasPermission(Permissions.COMMAND_SAVE)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}
@@ -22,7 +22,7 @@ public class SaveCommand extends CommandHandler {
 		}
 		
 		IridiumScoreBoard.getScoreBoard().write(false);
-		sender.sendMessage(Messages.SAVED);
+		sender.sendMessage(Messages.SAVED_PANELS);
 		return true;
 	}
 	

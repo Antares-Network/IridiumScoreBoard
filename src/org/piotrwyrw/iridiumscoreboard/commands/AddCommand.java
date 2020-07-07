@@ -10,10 +10,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
-import org.piotrwyrw.iridiumscoreboard.globals.Messages;
-import org.piotrwyrw.iridiumscoreboard.globals.Permissions;
+import org.piotrwyrw.iridiumscoreboard.global.Messages;
+import org.piotrwyrw.iridiumscoreboard.global.Permissions;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScorePanel;
-import org.piotrwyrw.iridiumscoreboard.util.SelectionTracker;
+import org.piotrwyrw.iridiumscoreboard.util.Utilities;
 
 import com.iridium.iridiumskyblock.Island;
 import com.iridium.iridiumskyblock.Utils;
@@ -23,11 +23,11 @@ public class AddCommand extends CommandHandler {
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
 		if (!(sender instanceof Player)) {
-			sender.sendMessage(Messages.NO_CONSOLE);
+			sender.sendMessage(Messages.CONSOLE_NOT_ALLOWED);
 			return false;
 		}
 		
-		if (!sender.hasPermission(Permissions.ADD_SCORE_PANEL)) {
+		if (!sender.hasPermission(Permissions.COMMAND_ADD)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}
@@ -37,19 +37,19 @@ public class AddCommand extends CommandHandler {
 			return false;
 		}
 		
-		Block selected = SelectionTracker.track((Player)(sender));
+		Block selected = Utilities.trackSelection((Player)(sender));
 		
 		if (!(selected.getState() instanceof Sign)) {
-			sender.sendMessage(Messages.NOT_SIGN);
+			sender.sendMessage(Messages.NOT_A_SIGN);
 			return false;
 		}
 		
 		// TODO Add sign to score list
 		List<Island> islands = Utils.getTopIslands();
-		ScorePanel sp = new ScorePanel(SelectionTracker.track(((Player)sender)).getLocation());
+		ScorePanel sp = new ScorePanel(Utilities.trackSelection(((Player)sender)).getLocation());
 		IridiumScoreBoard.getScoreBoard().addPanel(sp);
 		
-		sender.sendMessage(Messages.PANEL_ADDED);
+		sender.sendMessage(Messages.ADD_PANEL);
 		return true;
 	}
 }

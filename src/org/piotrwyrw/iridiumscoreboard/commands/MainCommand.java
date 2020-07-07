@@ -4,21 +4,15 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
-import org.piotrwyrw.iridiumscoreboard.commands.help.HelpPage;
+import org.piotrwyrw.iridiumscoreboard.global.Texts;
 
-public class IridiumScoreBoardMainCommand implements CommandExecutor {
+public class MainCommand implements CommandExecutor {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {	
 		
 		if (args.length == 0) {
-			sender.sendMessage(new String[] {
-					"",
-					"§b          IridiumScoreBoard",
-					"§7  Running IridiumScoreBoard §cv" + IridiumScoreBoard.getInstance().getDescription().getVersion(),
-					"§7       For help use §c/isb help",
-					""
-			});
+			sender.sendMessage(Texts.about);
 			return true;
 		}
 		
@@ -34,14 +28,14 @@ public class IridiumScoreBoardMainCommand implements CommandExecutor {
 		case "stop":
 			return new StopCommand().handleCommand(sender, args);
 		case "test":
-			return new TestPanelCommand().handleCommand(sender, args);
+			return new TestCommand().handleCommand(sender, args);
 		case "reload":
 			return new ReloadCommand().handleCommand(sender, args);
 		case "reset":
-			return new ResetConfig().handleCommand(sender, args);
+			return new ResetCommand().handleCommand(sender, args);
 		case "help":
 		default:
-			HelpPage.show(sender);
+			sender.sendMessage(Texts.help);
 			return true;
 		}
 	}
