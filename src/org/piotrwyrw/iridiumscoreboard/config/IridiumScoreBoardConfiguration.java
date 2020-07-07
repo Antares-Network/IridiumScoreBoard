@@ -17,7 +17,7 @@ public class IridiumScoreBoardConfiguration {
 		
 		File configFile = new File(isb.getDataFolder(), "config.yml");
 		if (!configFile.exists()) {
-			isb.getLogger().info("---- Creating configuration file .. ----");
+			isb.getLogger().info("\n\n---- Creating configuration file .. ----\n");
 			isb.saveResource("config.yml", true);
 		}
 		
@@ -73,10 +73,26 @@ public class IridiumScoreBoardConfiguration {
 			Messages.CONF_RELOADING = Messages.PREFIX + Fields.specialCharacterFields(config.getString(Configs.RELOADING));
 		}
 		
+		if (config.get(Configs.IS_PRIVATE) != null) {
+			Messages.IS_PRIVATE = Messages.PREFIX + Fields.specialCharacterFields(config.getString(Configs.IS_PRIVATE));
+		}
+		
+		if (config.get(Configs.IS_WHOOSH) != null) {
+			Messages.IS_SB_TP = Messages.PREFIX + Fields.specialCharacterFields(config.getString(Configs.IS_WHOOSH));
+		}
+		
+		if (config.get(Configs.RESETTING_CONF) != null) {
+			Messages.RESETTING_CONF = Messages.PREFIX + Fields.specialCharacterFields(config.getString(Configs.RESETTING_CONF));
+		}
+		
+		if (config.get(Configs.RESET_DONE) != null) {
+			Messages.RESET_DONE = Messages.PREFIX + Fields.specialCharacterFields(config.getString(Configs.RESET_DONE));
+		}
+		
 		if (config.get(Configs.SIGN_FORMAT) != null) {
 			List<String> format = config.getStringList(Configs.SIGN_FORMAT);
 			if (format.size() != 4) {
-				isb.getLogger().warning("---- Expected 4 lines of sign formatting but got " + format.size() + " ----");
+				isb.getLogger().warning("\n\n---- Expected 4 lines of sign formatting but got " + format.size() + " ----\n");
 			} else {
 				Signs.sign_format.clear();
 				for (String str : format)
@@ -87,7 +103,7 @@ public class IridiumScoreBoardConfiguration {
 		if (config.get(Configs.EMPTY_SIGN_FORMAT) != null) {
 			List<String> format = config.getStringList(Configs.EMPTY_SIGN_FORMAT);
 			if (format.size() != 4) {
-				isb.getLogger().warning("---- Expected 4 lines of empty sign formatting but got " + format.size() + " ----");
+				isb.getLogger().warning("\n\n---- Expected 4 lines of empty sign formatting but got " + format.size() + " ----\n");
 			} else {
 				Signs.empty.clear();
 				for (String str : format)
@@ -95,6 +111,6 @@ public class IridiumScoreBoardConfiguration {
 			}
 		}
 		
-		isb.getLogger().info("---- Done reading configuration. ----");
+		isb.getLogger().info("\n\n---- Done reading configuration. ----\n");
 	}
 }

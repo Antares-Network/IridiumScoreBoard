@@ -45,16 +45,20 @@ msg-stop: '&aAll update tasks have been stopped. The scoreboard won%APOSTROPHE%t
 msg-start: '&aA new score board update process has just started.'
 msg-saved: '&aSaved.'
 msg-reloaded: '&aConfig reloaded.'
+msg-private: '&cThis island is private.'
+msg-whoosh: '&aWhoosh!'
+msg-resetting: '&7Resetting config ..'
+msg-reset-done: '&aConfig reset.'
 
 #-----------------------------------#
 #              S I G N S            #
 #-----------------------------------#
 
 sign-format:
-  - ''
-  - '&2%NUMBER%'
-  - '&7%PLAYER%'
-  - '&c%VALUE%'
+  - '&3&l#%NUMBER%'
+  - '&8%PLAYER%'
+  - '&8%VALUE%'
+  - '&6[Right Click]'
 
 sign-empty-format:
   - ''

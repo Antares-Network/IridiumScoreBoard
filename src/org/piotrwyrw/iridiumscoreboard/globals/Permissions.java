@@ -22,4 +22,7 @@ public class Permissions {
 	
 	// Relaod
 	public static String RELOAD_ISB = "isb.reload";
+	
+	// Regen config
+	public static String RESET_CONFIG = "isb.reset";
 }

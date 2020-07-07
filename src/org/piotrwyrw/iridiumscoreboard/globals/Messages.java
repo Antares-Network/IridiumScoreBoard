@@ -41,6 +41,18 @@ public class Messages {
 	// Reloading
 	public static String CONF_RELOADING = PREFIX + "§7Reloading config ..";
 	
+	// Island is private
+	public static String IS_PRIVATE = PREFIX + "§cThis island is private.";
+	
+	// Sign tp success
+	public static String IS_SB_TP = PREFIX + "§aWhoosh!";
+	
+	// Resetting config
+	public static String RESETTING_CONF = PREFIX + "§7Resetting config ..";
+	
+	// Reset done
+	public static String RESET_DONE = PREFIX + "§aConfig reset.";
+	
 	// Exception message
 	public static String EXCEPTION(String details) {
 		return PREFIX + "§4Error\n§c" + details;

@@ -15,6 +15,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.piotrwyrw.iridiumscoreboard.commands.IridiumScoreBoardMainCommand;
 import org.piotrwyrw.iridiumscoreboard.config.IridiumScoreBoardConfiguration;
 import org.piotrwyrw.iridiumscoreboard.globals.Messages;
+import org.piotrwyrw.iridiumscoreboard.listener.ClickableSign;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScoreBoard;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScorePanel;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScoreUpdater;
@@ -62,7 +63,7 @@ public class IridiumScoreBoard extends JavaPlugin {
 		instance = this;
 		
 		if (!getServer().getPluginManager().getPlugin("IridiumSkyblock").isEnabled()) {
-			getLogger().warning(Messages.PREFIX + "§7IridiumScoreBoard requires the IridiumSkyblock plugin to work. Install the plugin and try again.");
+			getLogger().warning("\n\nIridiumScoreBoard requires the IridiumSkyblock plugin to work. Install the plugin and try again.\n");
 			getServer().getPluginManager().disablePlugin(this);
 			return;
 		}
@@ -81,6 +82,8 @@ public class IridiumScoreBoard extends JavaPlugin {
 		IridiumScoreBoardConfiguration isbc = new IridiumScoreBoardConfiguration();
 				
 		getCommand("isb").setExecutor(new IridiumScoreBoardMainCommand());
+		
+		getServer().getPluginManager().registerEvents(new ClickableSign(), this);
 		
 		startUpdater();
 	}

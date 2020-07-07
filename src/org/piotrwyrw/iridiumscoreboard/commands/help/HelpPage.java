@@ -15,6 +15,7 @@ public class HelpPage {
 			"§b/isb stop §8- §eStop the update timer §c(" + Permissions.STOP_UPDATE + ")",
 			"§b/isb test §8- §eTest all panels §c(" + Permissions.TEST_SCORE_PANELS + ")",
 			"§b/isb reload §8- §eReload the config §c(" + Permissions.RELOAD_ISB + ")",
+			"§b/isb reset §8- §eReset the config §c(" + Permissions.RESET_CONFIG + ")",
 			"§8o------------------------------------------------o",
 	};
 	

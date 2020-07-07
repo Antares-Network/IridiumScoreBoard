@@ -37,6 +37,8 @@ public class IridiumScoreBoardMainCommand implements CommandExecutor {
 			return new TestPanelCommand().handleCommand(sender, args);
 		case "reload":
 			return new ReloadCommand().handleCommand(sender, args);
+		case "reset":
+			return new ResetConfig().handleCommand(sender, args);
 		case "help":
 		default:
 			HelpPage.show(sender);
