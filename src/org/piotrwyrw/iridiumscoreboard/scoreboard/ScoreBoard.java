@@ -29,7 +29,7 @@ public class ScoreBoard {
 				isb.getLogger().warning("\n\n----- WARNING: " + p.location.getX() + ", " + p.location.getY() + ", " + p.location.getZ() + " should be a sign, but the block is of type " + p.location.getBlock().getType().toString() + " -----\n");
 				continue;
 			}
-			p.updateSign(true, null, null, i + 1);
+			p.test();
 		}
 	}
 	

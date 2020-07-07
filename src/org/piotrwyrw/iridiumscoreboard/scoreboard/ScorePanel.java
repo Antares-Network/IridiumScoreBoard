@@ -20,6 +20,15 @@ public class ScorePanel {
 		this.location = location;
 	}
 	
+	public void test() {
+		if (!(location.getBlock().getState() instanceof Sign)) return;
+		
+		Sign sign = ((Sign)location.getBlock().getState());
+		
+		Utilities.signContent(sign, SignFormats.test.get(0), SignFormats.test.get(1), SignFormats.test.get(2), SignFormats.test.get(3));
+		
+	}
+	
 	public void updateSign(boolean empty, String owner, Island island, int top) {
 		if (!(location.getBlock().getState() instanceof Sign)) return;
 		

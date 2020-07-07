@@ -11,10 +11,10 @@ public class SignFormats {
 			"§7{PLAYER}",
 			"§c{VALUE}"));
 	public static List<String> test = new ArrayList<String>(Arrays.asList(
-			"§1TEST",
-			"§2TEST",
-			"§3TEST",
-			"§4TEST"));
+			"§8" + SpecialCharacters.LAQUO + "§1§lTEST" + "§8" + SpecialCharacters.RAQUO,
+			"§8" + SpecialCharacters.LAQUO + "§2§lTEST" + "§8" + SpecialCharacters.RAQUO,
+			"§8" + SpecialCharacters.LAQUO + "§3§lTEST" + "§8" + SpecialCharacters.RAQUO,
+			"§8" + SpecialCharacters.LAQUO + "§4§lTEST" + "§8" + SpecialCharacters.RAQUO));
 	public static List<String> empty = new ArrayList<String>(Arrays.asList(
 			"",
 			"",
