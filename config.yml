@@ -19,8 +19,6 @@
 # %COPY%		- Copyright (whoever needs it)
 # %PARAGRAPH%	- A paragraph character
 # %APOSTROPHE%	- An apostrophe
-#
-# Look at config for examples of using fields.
 
 # If you would need to use an apostrophe inside of a message / sign format,
 # use %APOSTROPHE% instead. In case you will use ' instead of apostrophe field,
@@ -33,7 +31,7 @@
 #           M E S S A G E S         #
 #-----------------------------------#
 
-msg-prefix: '&b&lIridiumScoreBoard&8 %RAQUO%&r '
+msg-prefix: '&b&lIridiumScoreBoard&8 %LAQUO%&r '
 msg-no-permission: '&cYou don%APOSTROPHE%t have permission to do that.'
 msg-no-console: '&cYou must be a player to execute this command.'
 msg-panel-add: '&aThe score panel was added to the list.'
@@ -47,7 +45,6 @@ msg-saved: '&aSaved.'
 msg-reloaded: '&aConfig reloaded.'
 msg-private: '&cThis island is private.'
 msg-whoosh: '&aWhoosh!'
-msg-resetting: '&7Resetting config ..'
 msg-reset-done: '&aConfig reset.'
 
 #-----------------------------------#
@@ -56,19 +53,18 @@ msg-reset-done: '&aConfig reset.'
 
 sign-format:
   - ''
-  - '&3&l#%NUMBER%'
+  - '&2&lTOP %NUMBER%'
   - '&7%PLAYER%'
-  - '&c%VALUE%'
+  - '&a%VALUE%'
 
 sign-empty-format:
   - ''
-  - '&7No data'
-  - '&3&l%LAQUO%%RAQUO%'
+  - ''
+  - ''
   - ''
 
 #-----------------------------------#
-#         P E R M I S S I O N       #
+#        P E R M I S S I O N S      #
 #-----------------------------------#
 
-# Comming soon
-
+signtp-bypasspermission: true

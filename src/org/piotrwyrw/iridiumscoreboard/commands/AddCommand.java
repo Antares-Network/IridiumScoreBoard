@@ -27,7 +27,7 @@ public class AddCommand extends CommandHandler {
 			return false;
 		}
 		
-		if (!sender.hasPermission(Permissions.COMMAND_ADD)) {
+		if (!Permissions.has(sender, Permissions.COMMAND_ADD)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}

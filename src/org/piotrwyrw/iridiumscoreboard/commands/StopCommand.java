@@ -11,7 +11,7 @@ public class StopCommand extends CommandHandler {
 	
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
-		if (!sender.hasPermission(Permissions.COMMAND_STOP)) {
+		if (!Permissions.has(sender, Permissions.COMMAND_STOP)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}

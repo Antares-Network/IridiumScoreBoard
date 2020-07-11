@@ -66,7 +66,8 @@ public class IridiumScoreBoard extends JavaPlugin {
 	public void onEnable() {
 		
 		if (!getServer().getPluginManager().getPlugin("IridiumSkyblock").isEnabled()) {
-			getLogger().warning("\n\nIridiumScoreBoard requires the IridiumSkyblock plugin to work. Install the plugin and try again.\n");
+			for (String line : Texts.no_dependency)
+				getLogger().warning(line);
 			getServer().getPluginManager().disablePlugin(this);
 			return;
 		}

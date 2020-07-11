@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.craftbukkit.v1_16_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.piotrwyrw.iridiumscoreboard.global.SignFormats;
@@ -37,7 +38,7 @@ public class ScoreUpdater extends BukkitRunnable {
 			Player player = Bukkit.getPlayer(UUID.fromString(top.get(i).getOwner()));
 			
 			if (player != null) {
-				ownerStr = player.getDisplayName();
+				ownerStr = ((CraftPlayer)player).getHandle().getDisplayName().getText();
 			} else {
 				OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(UUID.fromString(top.get(i).getOwner()));
 				if (offlinePlayer == null) continue;

@@ -11,7 +11,7 @@ public class StartCommand extends CommandHandler {
 
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
-		if (!sender.hasPermission(Permissions.COMMAND_START)) {
+		if (!Permissions.has(sender, Permissions.COMMAND_START)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}

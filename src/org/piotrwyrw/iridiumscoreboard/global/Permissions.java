@@ -4,8 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
 public class Permissions {
-	public static List<UUID> bypass = new ArrayList<UUID>();
+	//public static List<UUID> admins = new ArrayList<UUID>();
+	
+	public static boolean has(CommandSender sender, String permission) {
+		if (!(sender instanceof Player)) return true;
+		
+		Player p = ((Player)sender);
+		if (p.hasPermission(permission));
+			return true;
+	}
+	
 	public static String COMMAND_ADD = "isb.add";
 	public static String COMMAND_CLEAR = "isb.clear";
 	public static String COMMAND_STOP = "isb.stop";
@@ -14,4 +26,7 @@ public class Permissions {
 	public static String COMMAND_SAVE = "isb.save";
 	public static String COMMAND_RELOAD = "isb.reload";
 	public static String COMMAND_RESET = "isb.reset";
+	
+	public static boolean EVENT_SIGNTELEPORT_REQUIRE = true;
+	public static String EVENT_SIGNTELEPORT = "isb.signtp";
 }

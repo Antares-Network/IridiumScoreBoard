@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Sign;
+import org.bukkit.command.CommandSender;
 import org.piotrwyrw.iridiumscoreboard.global.SignFormats;
 import org.piotrwyrw.iridiumscoreboard.util.Utilities;
 

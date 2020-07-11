@@ -1,12 +1,15 @@
 package org.piotrwyrw.iridiumscoreboard.config;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
 import org.piotrwyrw.iridiumscoreboard.global.ConfigPath;
 import org.piotrwyrw.iridiumscoreboard.global.Messages;
+import org.piotrwyrw.iridiumscoreboard.global.Permissions;
 import org.piotrwyrw.iridiumscoreboard.global.SignFormats;
 import org.piotrwyrw.iridiumscoreboard.util.Utilities;
 
@@ -14,10 +17,10 @@ public class Configuration {
 	public static void readConfig() {	
 		IridiumScoreBoard isb = IridiumScoreBoard.getInstance();
 		FileConfiguration config = isb.getConfig();
-		
+				
 		File configFile = new File(isb.getDataFolder(), "config.yml");
 		if (!configFile.exists()) {
-			isb.getLogger().info("\n\n---- Creating configuration file .. ----\n");
+			isb.getLogger().info("---- Creating configuration file .. ----");
 			isb.saveResource("config.yml", true);
 		}
 		
@@ -81,10 +84,6 @@ public class Configuration {
 			Messages.ISLAND_TELEPORT = Messages.PREFIX + Utilities.specialCharacterFields(config.getString(ConfigPath.ISLAND_TELEPORT));
 		}
 		
-		if (config.get(ConfigPath.RESETTING_CONFIGURATION) != null) {
-			Messages.RESETTING_CONFIGURATION = Messages.PREFIX + Utilities.specialCharacterFields(config.getString(ConfigPath.RESETTING_CONFIGURATION));
-		}
-		
 		if (config.get(ConfigPath.DONE_RESETTING) != null) {
 			Messages.DONE_RESETTING = Messages.PREFIX + Utilities.specialCharacterFields(config.getString(ConfigPath.DONE_RESETTING));
 		}
@@ -92,7 +91,7 @@ public class Configuration {
 		if (config.get(ConfigPath.SIGN_FORMAT) != null) {
 			List<String> format = config.getStringList(ConfigPath.SIGN_FORMAT);
 			if (format.size() != 4) {
-				isb.getLogger().warning("\n\n---- Expected 4 lines of sign formatting but got " + format.size() + " ----\n");
+				isb.getLogger().warning("---- Expected 4 lines of sign formatting but got " + format.size() + " ----");
 			} else {
 				SignFormats.sign_format.clear();
 				for (String str : format)
@@ -103,7 +102,7 @@ public class Configuration {
 		if (config.get(ConfigPath.EMPTY_SIGN_FORMAT) != null) {
 			List<String> format = config.getStringList(ConfigPath.EMPTY_SIGN_FORMAT);
 			if (format.size() != 4) {
-				isb.getLogger().warning("\n\n---- Expected 4 lines of empty sign formatting but got " + format.size() + " ----\n");
+				isb.getLogger().warning("---- Expected 4 lines of empty sign formatting but got " + format.size() + " ----");
 			} else {
 				SignFormats.empty.clear();
 				for (String str : format)
@@ -111,6 +110,10 @@ public class Configuration {
 			}
 		}
 		
-		isb.getLogger().info("\n\n---- Done reading configuration. ----\n");
+		if (config.get(ConfigPath.SIGNTELEPORT_REQUIRE_PERMISSION) != null) {
+			Permissions.EVENT_SIGNTELEPORT_REQUIRE = !config.getBoolean(ConfigPath.SIGNTELEPORT_REQUIRE_PERMISSION);
+		}
+		
+		isb.getLogger().info("---- Done reading configuration. ----");
 	}
 }

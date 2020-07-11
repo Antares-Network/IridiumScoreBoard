@@ -11,6 +11,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
 import org.piotrwyrw.iridiumscoreboard.global.Messages;
+import org.piotrwyrw.iridiumscoreboard.global.Permissions;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScoreBoard;
 import org.piotrwyrw.iridiumscoreboard.util.Utilities;
 
@@ -22,9 +23,11 @@ public class ClickableSign implements Listener {
 	@EventHandler
 	public void signClicked(PlayerInteractEvent evt) {
 		
-		if (evt.getAction() != Action.RIGHT_CLICK_BLOCK || !(evt.getClickedBlock().getState() instanceof Sign)) {
+		if (evt.getAction() != Action.RIGHT_CLICK_BLOCK || !(evt.getClickedBlock().getState() instanceof Sign))
 			return;
-		}
+		
+		if (evt.getPlayer().hasPermission(Permissions.EVENT_SIGNTELEPORT) && Permissions.EVENT_SIGNTELEPORT_REQUIRE)
+			return;
 		
 		ScoreBoard sb = IridiumScoreBoard.getScoreBoard();
 		List<Island> top = Utils.getTopIslands();

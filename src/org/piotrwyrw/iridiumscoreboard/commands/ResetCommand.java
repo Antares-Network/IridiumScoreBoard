@@ -11,7 +11,7 @@ public class ResetCommand extends CommandHandler {
 
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
-		if (!sender.hasPermission(Permissions.COMMAND_RESET)) {
+		if (!Permissions.has(sender, Permissions.COMMAND_RESET)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}
@@ -21,7 +21,6 @@ public class ResetCommand extends CommandHandler {
 			return false;
 		}
 		
-		sender.sendMessage(Messages.RESETTING_CONFIGURATION);
 		IridiumScoreBoard.getInstance().saveResource("config.yml", true);
 		sender.sendMessage(Messages.DONE_RESETTING);
 		return true;

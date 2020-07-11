@@ -3,7 +3,6 @@ package org.piotrwyrw.iridiumscoreboard.commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard;
 import org.piotrwyrw.iridiumscoreboard.global.Texts;
 
 public class MainCommand implements CommandExecutor {

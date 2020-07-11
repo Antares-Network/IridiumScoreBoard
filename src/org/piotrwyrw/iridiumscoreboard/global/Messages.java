@@ -17,7 +17,6 @@ public class Messages {
 	public static String RELOADING = PREFIX + "§7Reloading config ..";
 	public static String ISLAND_IS_PRIVATE = PREFIX + "§cThis island is private.";
 	public static String ISLAND_TELEPORT = PREFIX + "§aWhoosh!";
-	public static String RESETTING_CONFIGURATION = PREFIX + "§7Resetting config ..";
 	public static String DONE_RESETTING = PREFIX + "§aConfig reset.";
 	
 	public static String EXCEPTION(String details) {

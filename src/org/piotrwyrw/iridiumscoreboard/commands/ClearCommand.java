@@ -9,7 +9,7 @@ public class ClearCommand extends CommandHandler {
 	
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
-		if (!sender.hasPermission(Permissions.COMMAND_CLEAR)) {
+		if (!Permissions.has(sender, Permissions.COMMAND_CLEAR)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}

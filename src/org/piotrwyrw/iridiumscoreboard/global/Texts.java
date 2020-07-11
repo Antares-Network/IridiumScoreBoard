@@ -40,4 +40,15 @@ public class Texts {
 		"",
 		"- - - - - - - - - - - - - - - -"
 	};
+	
+	public static String[] no_dependency = {
+		"- - - - - - - - - - - - - - - - - -",
+		"",	
+		"        IRIDIUM SCORE BOARD ",
+		" This plugin needs IridiumSkyBlock",
+		"to work. Please install this plugin",
+		"          and try again.",
+		"",
+		"- - - - - - - - - - - - - - - - - -"
+	};
 }

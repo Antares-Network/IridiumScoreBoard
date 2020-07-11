@@ -20,9 +20,10 @@ public class ConfigPath {
 	public static String RELOAD_COMPLETE = "msg-reloaded";
 	public static String ISLAND_IS_PRIVATE = "msg-private";
 	public static String ISLAND_TELEPORT = "msg-whoosh";
-	public static String RESETTING_CONFIGURATION = "msg-resetting";
 	public static String DONE_RESETTING = "msg-reset-done";
 	
 	public static String SIGN_FORMAT = "sign-format";
 	public static String EMPTY_SIGN_FORMAT = "sign-empty-format";
+	
+	public static String SIGNTELEPORT_REQUIRE_PERMISSION = "signtp-bypasspermission";
 }

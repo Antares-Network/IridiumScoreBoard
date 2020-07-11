@@ -20,7 +20,7 @@ public class TestCommand extends CommandHandler {
 
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
-		if (!sender.hasPermission(Permissions.COMMAND_TEST)) {
+		if (!Permissions.has(sender, Permissions.COMMAND_TEST)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}
@@ -30,7 +30,7 @@ public class TestCommand extends CommandHandler {
 			return false;
 		}
 		
-		IridiumScoreBoard.getScoreBoard().test();
+		IridiumScoreBoard.getScoreBoard().test(sender);
 		sender.sendMessage(Messages.DONE_TESTING);
 		return true;
 	}
