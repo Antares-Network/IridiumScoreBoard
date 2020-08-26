@@ -10,7 +10,7 @@ public class Messages {
 	public static String NOT_A_SIGN = PREFIX + "§cThe selected block is not a sign.";
 	public static String DONE_TESTING = PREFIX + "§aAll panels have been filled with test content.";
 	public static String ENCOUNTERED_WRONG_BLOCK = PREFIX + "§cEncountered a block which is not a sign while testing the scoreboard. Skipped.";
-	public static String STOP_TASK = PREFIX + "§aAll update tasks have been stopped. The scoreboard won't refresh until /isbstart was called.";
+	public static String STOP_TASK = PREFIX + "§aAll update tasks have been stopped. The scoreboard won't refresh until /isb start was called.";
 	public static String START_TASK = PREFIX + "§aA new score board update process has just started.";
 	public static String SAVED_PANELS = PREFIX + "§aSaved.";
 	public static String RELOAD_COMPLETE = PREFIX + "§aConfig reloaded.";

@@ -8,7 +8,8 @@ public class Texts {
 		"§b          IridiumScoreBoard",
 		"§7  Running IridiumScoreBoard §cv" + IridiumScoreBoard.getInstance().getDescription().getVersion(),
 		"§7       For help use §c/isb help",
-		""
+		"",
+		"§7* You are running IridiumScoreBoard for Minecraft §6" + IridiumScoreBoard.getInstance().getDescription().getDescription() + "§7."
 	};
 	
 	public static String[] help = {
