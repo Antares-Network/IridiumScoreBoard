@@ -9,7 +9,6 @@ import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.craftbukkit.v1_16_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,11 +20,6 @@ import org.piotrwyrw.iridiumscoreboard.listener.ClickableSign;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScoreBoard;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScorePanel;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScoreUpdater;
-
-import net.minecraft.server.v1_16_R1.PacketPlayOutWorldBorder;
-import net.minecraft.server.v1_16_R1.PacketPlayOutWorldBorder.EnumWorldBorderAction;
-import net.minecraft.server.v1_16_R1.WorldBorder;
-import net.minecraft.server.v1_16_R1.WorldServer;
 
 public class IridiumScoreBoard extends JavaPlugin {
 	

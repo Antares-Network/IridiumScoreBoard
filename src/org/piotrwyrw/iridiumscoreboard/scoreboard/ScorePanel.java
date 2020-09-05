@@ -21,12 +21,12 @@ public class ScorePanel {
 		this.location = location;
 	}
 	
-	public void test() {
+	public void test(int index) {
 		if (!(location.getBlock().getState() instanceof Sign)) return;
 		
 		Sign sign = ((Sign)location.getBlock().getState());
 		
-		Utilities.signContent(sign, SignFormats.test.get(0), SignFormats.test.get(1), SignFormats.test.get(2), SignFormats.test.get(3));
+		Utilities.signContent(sign, "§7" + String.valueOf(index), SignFormats.test.get(1), SignFormats.test.get(2), SignFormats.test.get(3));
 		
 	}
 	
