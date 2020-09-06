@@ -26,4 +26,6 @@ public class ConfigPath {
 	public static String EMPTY_SIGN_FORMAT = "sign-empty-format";
 	
 	public static String SIGNTELEPORT_REQUIRE_PERMISSION = "signtp-bypasspermission";
+	
+	public static String ADMINS = "admins";
 }

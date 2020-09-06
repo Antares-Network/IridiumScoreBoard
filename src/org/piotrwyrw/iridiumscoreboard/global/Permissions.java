@@ -8,15 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class Permissions {
-	//public static List<UUID> admins = new ArrayList<UUID>();
-	
-	public static boolean has(CommandSender sender, String permission) {
-		if (!(sender instanceof Player)) return true;
-		
-		Player p = ((Player)sender);
-		if (p.hasPermission(permission));
-			return true;
-	}
+	public static List<String> admins = new ArrayList<String>();
 	
 	public static String COMMAND_ADD = "isb.add";
 	public static String COMMAND_CLEAR = "isb.clear";

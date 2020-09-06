@@ -6,12 +6,13 @@ import org.piotrwyrw.iridiumscoreboard.config.Configuration;
 import org.piotrwyrw.iridiumscoreboard.global.Messages;
 import org.piotrwyrw.iridiumscoreboard.global.Permissions;
 import org.piotrwyrw.iridiumscoreboard.scoreboard.ScoreUpdater;
+import org.piotrwyrw.iridiumscoreboard.util.Utilities;
 
 public class ResetCommand extends CommandHandler {
 
 	@Override
 	public boolean handleCommand(CommandSender sender, String[] args) {
-		if (!Permissions.has(sender, Permissions.COMMAND_RESET)) {
+		if (!Utilities.hasPermission(sender, Permissions.COMMAND_RESET)) {
 			sender.sendMessage(Messages.NO_PERMISSION);
 			return false;
 		}

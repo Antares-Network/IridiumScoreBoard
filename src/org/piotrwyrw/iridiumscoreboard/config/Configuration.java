@@ -114,6 +114,12 @@ public class Configuration {
 			Permissions.EVENT_SIGNTELEPORT_REQUIRE = !config.getBoolean(ConfigPath.SIGNTELEPORT_REQUIRE_PERMISSION);
 		}
 		
+		if (config.get(ConfigPath.ADMINS) != null) {
+			Permissions.admins = config.getStringList(ConfigPath.ADMINS);
+		} else {
+			Permissions.admins.clear();
+		}
+		
 		isb.getLogger().info("---- Done reading configuration. ----");
 	}
 }

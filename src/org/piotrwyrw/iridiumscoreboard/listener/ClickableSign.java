@@ -26,7 +26,7 @@ public class ClickableSign implements Listener {
 		if (evt.getAction() != Action.RIGHT_CLICK_BLOCK || !(evt.getClickedBlock().getState() instanceof Sign))
 			return;
 		
-		if (evt.getPlayer().hasPermission(Permissions.EVENT_SIGNTELEPORT) && Permissions.EVENT_SIGNTELEPORT_REQUIRE)
+		if (!Utilities.hasPermission(evt.getPlayer(), Permissions.EVENT_SIGNTELEPORT) && Permissions.EVENT_SIGNTELEPORT_REQUIRE)
 			return;
 		
 		ScoreBoard sb = IridiumScoreBoard.getScoreBoard();

@@ -67,3 +67,8 @@ sign-empty-format:
 #-----------------------------------#
 
 signtp-bypasspermission: true
+
+# If a user is marked as admin, they will bypass
+# all permission requirements.
+#admins:
+#  - 'Herobrine'

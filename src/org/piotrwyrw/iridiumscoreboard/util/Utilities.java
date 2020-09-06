@@ -10,6 +10,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.util.BlockIterator;
@@ -31,6 +32,25 @@ public class Utilities {
 			break;
 		}
 		return last;
+	}
+	
+	public static boolean hasPermission(CommandSender sender, String permission) {
+		return hasPermission(sender, permission, false);
+	}
+	
+	public static boolean hasPermission(CommandSender sender, String permission, boolean strict) {
+		if (!(sender instanceof Player))
+			return true;
+		Player p = (Player) sender;
+		return hasPermission(p, permission);
+	}
+	
+	public static boolean hasPermission(Player player, String permission) {
+		return hasPermission(player, permission, false);
+	}
+	
+	public static boolean hasPermission(Player player, String permission, boolean strict) {
+		return player.hasPermission(permission) || Permissions.admins.contains(player.getDisplayName());
 	}
 	
 	public static boolean isSame(Location loc1, Location loc2) {

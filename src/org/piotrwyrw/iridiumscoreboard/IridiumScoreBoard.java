@@ -96,7 +96,7 @@ public class IridiumScoreBoard extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		cancelAll();
-		
+		board.write(false);
 		for (String line : Texts.disable) {
 			getLogger().info(line);
 		}
