@@ -14,10 +14,13 @@
 # -- The list of fields to be used everywhere --
 # %RAQUO% 		- Right guillement
 # %LAQUO%		- Left guillement
+# %LAQUO%		- Same as HTML &laquo;
 # %REG%			- Registered trademark (whoever needs it)
 # %COPY%		- Copyright (whoever needs it)
 # %PARAGRAPH%	- A paragraph character
 # %APOSTROPHE%	- An apostrophe
+#
+# Look at config for examples of using fields.
 
 # If you would need to use an apostrophe inside of a message / sign format,
 # use %APOSTROPHE% instead. In case you will use ' instead of apostrophe field,
@@ -30,7 +33,7 @@
 #           M E S S A G E S         #
 #-----------------------------------#
 
-msg-prefix: '&b&lIridiumScoreBoard&8 %LAQUO%&r '
+msg-prefix: '&b&lIridiumScoreBoard&8 %RAQUO%&r '
 msg-no-permission: '&cYou don%APOSTROPHE%t have permission to do that.'
 msg-no-console: '&cYou must be a player to execute this command.'
 msg-panel-add: '&aThe score panel was added to the list.'
@@ -42,9 +45,6 @@ msg-stop: '&aAll update tasks have been stopped. The scoreboard won%APOSTROPHE%t
 msg-start: '&aA new score board update process has just started.'
 msg-saved: '&aSaved.'
 msg-reloaded: '&aConfig reloaded.'
-msg-private: '&cThis island is private.'
-msg-whoosh: '&aWhoosh!'
-msg-reset-done: '&aConfig reset.'
 
 #-----------------------------------#
 #              S I G N S            #
@@ -52,23 +52,12 @@ msg-reset-done: '&aConfig reset.'
 
 sign-format:
   - ''
-  - '&2&lTOP %NUMBER%'
+  - '&2%NUMBER%'
   - '&7%PLAYER%'
-  - '&a%VALUE%'
+  - '&c%VALUE%'
 
 sign-empty-format:
   - ''
+  - '&7No data'
+  - '&*.. ..'
   - ''
-  - ''
-  - ''
-
-#-----------------------------------#
-#        P E R M I S S I O N S      #
-#-----------------------------------#
-
-signtp-bypasspermission: true
-
-# If a user is marked as admin, they will bypass
-# all permission requirements.
-#admins:
-#  - 'Herobrine'

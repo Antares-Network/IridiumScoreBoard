@@ -1,9 +1,8 @@
 name: IridiumScoreBoard
 main: org.piotrwyrw.iridiumscoreboard.IridiumScoreBoard
-description: '1.16.2'
 depend: [IridiumSkyblock]
-version: 2.0
-author: piotrwyrw
+version: 1.6
+author: [Tillthen, nathen418]
 api-version: 1.15
 commands:
   isb:
