@@ -8,6 +8,9 @@
 IridiumScoreBoard is a Spigot plugin, which lets you create sign based score boards for IridiumSkyBlock.
 Visit the [Wiki page](https://github.com/Antares-Network/IridiumScoreBoard/wiki) for help.
 
+### NOTE
+`ISB is only guaranteed to work with MC version 1.16.4, Later versions may be functional but it has not been tested.`
+
 ### Join our discord support server:
 https://dsc.gg/antaresnetwork
 
